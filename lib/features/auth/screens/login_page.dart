@@ -100,8 +100,6 @@ class _LoginPageState extends ConsumerState<LoginPage> {
               child: Column(
                 // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset("assets/images/login.png", height: 200),
-
                   const SizedBox(height: 20),
 
                   TextFormField(
@@ -154,10 +152,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                         horizontal: 16,
                         vertical: 16,
                       ),
-                      prefixIcon: const Icon(
-                        Icons.password,
-                        size: 20,
-                      ), 
+                      prefixIcon: const Icon(Icons.password, size: 20),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                         borderSide: BorderSide.none,
@@ -182,7 +177,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
-                      onPressed: () { },
+                      onPressed: () {},
                       child: const Text(
                         "Forgot Password?",
                         style: TextStyle(
