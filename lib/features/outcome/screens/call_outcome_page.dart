@@ -74,7 +74,8 @@ class _CallOutcomePageState extends ConsumerState<CallOutcomePage> {
     _interestLevel = widget.interestLevel;
     _selectedTimeline = widget.timeline;
     selectedRequirement = widget.bhk;
-    if (widget.status?.toLowerCase() == "in_followup" || widget.status == "pending") {
+    if (widget.status?.toLowerCase() == "in_followup" ||
+        widget.status == "pending") {
       _callStatus = "Answered";
       _interest = "Interested";
     }
@@ -183,7 +184,6 @@ class _CallOutcomePageState extends ConsumerState<CallOutcomePage> {
             children: [
               _buildSectionTitle("How was the call?"),
               const SizedBox(height: 12),
-              // if changed _buildChoiceChips to widget CustomChoiceChips, then update the parameters accordingly
               CustomChoiceChips(
                 options: ["Not Picked", "Busy", "Answered", "Wrong Number"],
                 selectedOption: _callStatus ?? "",
@@ -200,7 +200,7 @@ class _CallOutcomePageState extends ConsumerState<CallOutcomePage> {
                           "followup"; // Auto-set follow-up for Busy/Not Picked
                       _interest = null;
                     } else if (val == "Busy" || val == "Not Picked") {
-                      _nextAction = "followup"; // Auto-set followup
+                      _nextAction = "followup"; // Auto-set  the followup
                       _interest = null;
                     }
                   });
@@ -338,7 +338,7 @@ class _CallOutcomePageState extends ConsumerState<CallOutcomePage> {
 
                   const SizedBox(height: 16),
 
-                  // Remarks Text Field (Reusing your _notesController)
+                  // Remarks
                   TextFormField(
                     controller: _notesController,
                     maxLines: 3,

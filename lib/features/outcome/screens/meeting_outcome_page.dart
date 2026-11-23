@@ -299,29 +299,6 @@ class _MeetingOutcomePageState extends ConsumerState<MeetingOutcomePage> {
     );
   }
 
-  Widget _buildChoiceChips({
-    required List<String> options,
-    required String? selected,
-    required Function(String) onSelected,
-  }) {
-    return Wrap(
-      spacing: 8,
-      children: options
-          .map(
-            (s) => ChoiceChip(
-              label: Text(s.toUpperCase()),
-              selected: selected == s,
-              onSelected: (_) => onSelected(s),
-              selectedColor: Theme.of(context).primaryColor,
-              labelStyle: TextStyle(
-                color: selected == s ? Colors.white : Colors.black,
-              ),
-            ),
-          )
-          .toList(),
-    );
-  }
-
   Widget _buildTextField(
     TextEditingController controller,
     String label,
